@@ -1,0 +1,4 @@
+﻿Dim V_0 As String = "un chat fait du bruit en dormant !"
+While(V_0.Length() > 0)
+    V_0 = V_0.Substring(1)
+End While

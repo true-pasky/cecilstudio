@@ -1,0 +1,2 @@
+﻿Dim V_0 As Integer = V_1 + V_2
+Return V_0

@@ -1,0 +1,3 @@
+﻿Public Function Test() As String
+Return "ok"
+End Function

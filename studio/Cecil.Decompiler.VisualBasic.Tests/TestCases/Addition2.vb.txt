@@ -1,0 +1,3 @@
+﻿Dim V_0 As Integer
+V_0 = V_1 + V_2
+Return V_0

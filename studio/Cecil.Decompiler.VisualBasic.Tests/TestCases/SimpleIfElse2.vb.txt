@@ -1,0 +1,5 @@
+﻿If True Then
+	Console.WriteLine("Grand")
+Else
+	Console.WriteLine("Petit")
+End If
