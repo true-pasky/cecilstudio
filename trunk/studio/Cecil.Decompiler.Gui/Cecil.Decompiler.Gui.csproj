@@ -235,11 +235,7 @@
       <Project>{D8F63DFF-5230-43E4-9AB2-DA6E721A1FAE}</Project>
       <Name>Mono.Cecil</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Cecil.Decompiler.VisualBasic\Cecil.Decompiler.VisualBasic.vbproj">
-      <Project>{F1107C46-15C9-4D1C-AE82-4A1A02503066}</Project>
-      <Name>Cecil.Decompiler.VisualBasic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cecil.Decompiler\Cecil.Decompiler.csproj">
+    <ProjectReference Include="..\..\decompiler\Cecil.Decompiler\Cecil.Decompiler.csproj">
       <Project>{ED1BE103-1699-4116-A732-616BEB142EB2}</Project>
       <Name>Cecil.Decompiler</Name>
     </ProjectReference>
