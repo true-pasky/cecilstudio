@@ -3,11 +3,11 @@
 Namespace Steps
 
 	Public Class VisualBasicConcat
-		Implements IDecompilationStep
+        Implements IDecompilationStep
 
-		Public Sub Process(ByVal context As DecompilationContext, ByVal body As BlockStatement) Implements IDecompilationStep.Process
-
-  End Sub
- End Class
+        Public Function Process(ByVal context As DecompilationContext, ByVal body As BlockStatement) As BlockStatement Implements IDecompilationStep.Process
+            Return body
+        End Function
+    End Class
 
 End Namespace

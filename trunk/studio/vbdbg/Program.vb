@@ -5,7 +5,6 @@ Imports Cecil.Decompiler.Languages
 Imports Cecil.Decompiler.ControlFlow
 Imports System.IO
 Imports Mono.Cecil
-Imports Cecil.Decompiler.Addins
 
 Class Program
 
@@ -44,8 +43,7 @@ Class Program
 			Dim method = GetProgramMethod(methodsList(i))
 			Dim language = New VisualBasic()
 			Dim body = method.Body.Decompile(language)
-			'Dim writer = language.GetWriter(New PlainTextFormatter(Console.Out))
-			Dim writer = language.GetWriter(New ColoredConsoleFormatter())
+            Dim writer = language.GetWriter(New PlainTextFormatter(Console.Out))
 			writer.Write(method)
 
 			Console.WriteLine()

@@ -128,7 +128,7 @@
       <Project>{D8F63DFF-5230-43E4-9AB2-DA6E721A1FAE}</Project>
       <Name>Mono.Cecil</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Cecil.Decompiler.Tests\Cecil.Decompiler.Tests.csproj">
+    <ProjectReference Include="..\..\decompiler\Cecil.Decompiler.Tests\Cecil.Decompiler.Tests.csproj">
       <Project>{A2D41337-2817-453A-B299-E4DF957CEE7B}</Project>
       <Name>Cecil.Decompiler.Tests</Name>
     </ProjectReference>
@@ -136,7 +136,7 @@
       <Project>{F1107C46-15C9-4D1C-AE82-4A1A02503066}</Project>
       <Name>Cecil.Decompiler.VisualBasic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Cecil.Decompiler\Cecil.Decompiler.csproj">
+    <ProjectReference Include="..\..\decompiler\Cecil.Decompiler\Cecil.Decompiler.csproj">
       <Project>{ED1BE103-1699-4116-A732-616BEB142EB2}</Project>
       <Name>Cecil.Decompiler</Name>
     </ProjectReference>
@@ -146,7 +146,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-
     <Content Include="TestCases\Identity.vb.txt" />
     <Content Include="TestCases\LoopTests.vb.txt" />
     <Content Include="TestCases\MethodSignatures\PublicSharedSub.vb.txt" />

@@ -6,9 +6,9 @@ Public Class OnErrorResumeNext
 
 	Public Shared ReadOnly Instance As OnErrorResumeNext = New OnErrorResumeNext()
 
-	Public Sub Process(ByVal context As DecompilationContext, ByVal body As Ast.BlockStatement) Implements Steps.IDecompilationStep.Process
-
-	End Sub
+    Public Function Process(ByVal context As DecompilationContext, ByVal body As Ast.BlockStatement) As Ast.BlockStatement Implements Steps.IDecompilationStep.Process
+        Return body
+    End Function
 
 	Public Function HasClearProject(ByVal body As MethodBody) As Boolean
 		Dim a As String = body.Instructions(0).OpCode.ToString
