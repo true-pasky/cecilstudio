@@ -108,13 +108,9 @@
       <Project>{D8F63DFF-5230-43E4-9AB2-DA6E721A1FAE}</Project>
       <Name>Mono.Cecil</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Cecil.Decompiler\Cecil.Decompiler.csproj">
+    <ProjectReference Include="..\..\decompiler\Cecil.Decompiler\Cecil.Decompiler.csproj">
       <Project>{ED1BE103-1699-4116-A732-616BEB142EB2}</Project>
       <Name>Cecil.Decompiler</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ColoredConsoleFormatter\Cecil.Decompiler.Addins.csproj">
-      <Project>{3B784E25-E833-406E-8CCF-8ADF8AC12264}</Project>
-      <Name>Cecil.Decompiler.Addins</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

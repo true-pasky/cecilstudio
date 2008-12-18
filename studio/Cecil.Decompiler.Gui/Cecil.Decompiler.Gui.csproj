@@ -239,6 +239,10 @@
       <Project>{ED1BE103-1699-4116-A732-616BEB142EB2}</Project>
       <Name>Cecil.Decompiler</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cecil.Decompiler.VisualBasic\Cecil.Decompiler.VisualBasic.vbproj">
+      <Project>{F1107C46-15C9-4D1C-AE82-4A1A02503066}</Project>
+      <Name>Cecil.Decompiler.VisualBasic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
