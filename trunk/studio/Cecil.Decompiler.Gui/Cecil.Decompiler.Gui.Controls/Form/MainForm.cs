@@ -99,9 +99,6 @@ namespace Cecil.Decompiler.Gui.Controls
 
                 RegisterLanguages();
                 RegisterServices();
-
-                //var plugin = new TestPlugin();
-                //plugin.Load(ServiceProvider.GetInstance());
             }
         }
         #endregion

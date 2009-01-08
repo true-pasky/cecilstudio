@@ -63,6 +63,9 @@
     <Compile Include="Cecil.Decompiler.Gui.Controls\Window\DisassembleControl.Designer.cs">
       <DependentUpon>DisassembleControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cecil.Decompiler.Gui.Controls\Window\TableLayoutSplitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Cecil.Decompiler.Gui.Services\ActionManager\ActionNames.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Actions\BaseAction.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Actions\UnloadAssemblyAction.cs" />
@@ -186,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cecil.Decompiler.Gui.Controls\Toolstrip\ToolbarControl.resx">
       <DependentUpon>ToolbarControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cecil.Decompiler.Gui.Controls\Window\TableLayoutSplitter.resx">
+      <DependentUpon>TableLayoutSplitter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cecil.Decompiler.Gui.Controls\Window\WindowStackerControl.resx">
       <DependentUpon>WindowStackerControl.cs</DependentUpon>
