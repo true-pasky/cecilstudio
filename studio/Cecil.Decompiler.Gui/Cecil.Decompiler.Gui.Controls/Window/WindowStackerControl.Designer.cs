@@ -33,13 +33,14 @@
             // 
             // layoutPanel
             // 
+            this.layoutPanel.AutoSize = true;
             this.layoutPanel.ColumnCount = 1;
             this.layoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.layoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutPanel.Location = new System.Drawing.Point(0, 0);
             this.layoutPanel.Name = "layoutPanel";
             this.layoutPanel.RowCount = 1;
-            this.layoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.layoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.layoutPanel.Size = new System.Drawing.Size(150, 150);
             this.layoutPanel.TabIndex = 0;
             // 
@@ -50,6 +51,7 @@
             this.Controls.Add(this.layoutPanel);
             this.Name = "WindowStackerControl";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

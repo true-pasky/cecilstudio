@@ -38,6 +38,15 @@ namespace Cecil.Decompiler.Gui.Controls
             contentPanel.Controls.Add(content);
         }
 
+        protected override void OnVisibleChanged(EventArgs e)
+        {
+            base.OnVisibleChanged(e);
+            if (Parent != null && Parent.Parent is WindowStackerControl)
+            {
+                (Parent.Parent as WindowStackerControl).ResizeCells();
+            }
+        }
+
         private void CloseBox_Click(object sender, EventArgs e)
         {
             Visible = false;

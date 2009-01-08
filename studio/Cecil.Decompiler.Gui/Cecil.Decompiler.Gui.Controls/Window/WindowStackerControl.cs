@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using Cecil.Decompiler.Gui.Services;
 
@@ -27,11 +28,64 @@ namespace Cecil.Decompiler.Gui.Controls
             windows.Remove(identifier);
         }
 
+        public void ResizeCells()
+        {
+            int visiblecount = 0;
+            int visibleindex = 0;
+
+            for (int i=0; i< layoutPanel.RowStyles.Count; i++)
+            {
+                RowStyle rowstyle = layoutPanel.RowStyles[i];
+
+                if (layoutPanel.Controls.Count > i)
+                {
+                    Control control = layoutPanel.Controls[i];
+
+                    if (control.Visible)
+                    {
+                        visiblecount++;
+                        visibleindex = i;
+                        if (i == layoutPanel.RowStyles.Count - 1)
+                        {
+                            rowstyle.SizeType = SizeType.AutoSize;
+                            rowstyle.SizeType = SizeType.Absolute;
+                        }
+                        else
+                        {
+                            rowstyle.SizeType = SizeType.Absolute;
+                            rowstyle.Height = Convert.ToInt32(layoutPanel.Height / windows.Count);
+                        }
+                    }
+                    else
+                    {
+                        rowstyle.SizeType = SizeType.Absolute;
+                        rowstyle.Height = 0;
+                    }
+                }
+            }
+
+            if (visiblecount == 1)
+            {
+                RowStyle rowstyle = layoutPanel.RowStyles[visibleindex];
+                rowstyle.SizeType = SizeType.Percent;
+                rowstyle.Height = 100;
+            }
+        }
+
         public void Add(string identifier, StackedWindowControl window)
         {
             window.Dock = DockStyle.Fill;
-            layoutPanel.Controls.Add(window);
             windows.Add(identifier, window);
+
+            while (layoutPanel.RowCount < windows.Count)
+            {
+                layoutPanel.RowCount++;
+                layoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute));
+            }
+
+            layoutPanel.Controls.Add(window, 0, windows.Count - 1);
+
+            ResizeCells();
         }
 
         public IWindow this[string identifier]
