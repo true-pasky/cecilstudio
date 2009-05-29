@@ -96,9 +96,11 @@ namespace Cecil.Decompiler.Gui.Controls
             {
                 toolbarControl.WireItems();
                 menuControl.WireItems();
-
+                
                 RegisterLanguages();
                 RegisterServices();
+
+                breadCrumbControl.Wire();
             }
         }
         #endregion

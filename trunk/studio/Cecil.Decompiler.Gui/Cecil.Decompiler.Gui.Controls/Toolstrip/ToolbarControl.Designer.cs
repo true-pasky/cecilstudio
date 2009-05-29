@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.backButton = new Cecil.Decompiler.Gui.Controls.ToolStripButton();
             this.forwardButton = new Cecil.Decompiler.Gui.Controls.ToolStripButton();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.loadButton = new Cecil.Decompiler.Gui.Controls.ToolStripButton();
             this.languageSelector = new Cecil.Decompiler.Gui.Controls.LanguageSelectorControl();
             this.toolStrip.SuspendLayout();
@@ -48,10 +48,16 @@
             this.languageSelector});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
+            this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip.Size = new System.Drawing.Size(150, 25);
             this.toolStrip.TabIndex = 0;
             this.toolStrip.ItemAdded += new System.Windows.Forms.ToolStripItemEventHandler(this.ToolStrip_ItemAdded);
             this.toolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ToolStrip_ItemClicked);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
             // 
             // backButton
             // 
@@ -72,11 +78,6 @@
             this.forwardButton.Name = "forwardButton";
             this.forwardButton.Size = new System.Drawing.Size(23, 22);
             this.forwardButton.Text = "Forward";
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
             // 
             // loadButton
             // 

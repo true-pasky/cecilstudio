@@ -7,6 +7,7 @@ namespace Cecil.Decompiler.Gui.Services
         event EventHandler ActiveItemChanged;
 
         object ActiveItem { get; set; }
+        object[] ActiveItemObjectHierarchy { get; }
 
         void GoBack();
         void GoForward();

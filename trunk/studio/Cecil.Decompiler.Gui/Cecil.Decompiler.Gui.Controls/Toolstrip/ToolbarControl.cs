@@ -12,7 +12,6 @@ namespace Cecil.Decompiler.Gui.Controls
     internal partial class ToolbarControl : UserControl
     {
         private readonly Dictionary<ActionNames, System.Windows.Forms.ToolStripItem> actionitems = new Dictionary<ActionNames, System.Windows.Forms.ToolStripItem>();
-        public IServiceProvider ServiceProvider { get; set; }
 
         public ILanguageManager LanguageManager
         {
