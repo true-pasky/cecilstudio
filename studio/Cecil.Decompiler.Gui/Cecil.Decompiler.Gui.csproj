@@ -51,6 +51,12 @@
   <ItemGroup>
     <Compile Include="Cecil.Decompiler.Gui.Actions\BaseStackedWindowControlAction.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Actions\AnalyzeAction.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Controls\Toolstrip\BreadCrumbControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cecil.Decompiler.Gui.Controls\Toolstrip\BreadCrumbControl.Designer.cs">
+      <DependentUpon>BreadCrumbControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cecil.Decompiler.Gui.Controls\Window\AnalyzeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </Compile>
     <Compile Include="Cecil.Decompiler.Gui.Tests\TestPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Cecil.Decompiler.Gui.Controls\Toolstrip\BreadCrumbControl.resx">
+      <DependentUpon>BreadCrumbControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cecil.Decompiler.Gui.Controls\Window\AnalyzeControl.resx">
       <DependentUpon>AnalyzeControl.cs</DependentUpon>
     </EmbeddedResource>

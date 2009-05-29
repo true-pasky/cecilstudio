@@ -29,6 +29,26 @@ namespace Cecil.Decompiler.Gui.Controls
         #region IAssemblyBrowser
         public event EventHandler ActiveItemChanged;
 
+        public object[] ActiveItemObjectHierarchy
+        {
+            get
+            {
+                var objects = new ArrayList();
+                var node = treeView.SelectedNode;
+                while (node != null)
+                {
+                    if (node.Tag != null)
+                    {
+                        objects.Add(node.Tag);
+                    }
+                    node = node.Parent;
+                }
+
+                objects.Reverse();
+                return objects.ToArray();
+            }
+        }
+
         public object ActiveItem
         {
             get
