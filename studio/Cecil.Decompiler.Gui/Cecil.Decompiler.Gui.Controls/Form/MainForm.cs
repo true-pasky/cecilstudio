@@ -4,6 +4,8 @@ using Cecil.Decompiler.Gui.Services;
 using Cecil.Decompiler.Gui.Tests;
 using Cecil.Decompiler.Languages;
 using Cecil.Decompiler.Gui.Collections;
+using System.Reflection;
+using System;
 
 namespace Cecil.Decompiler.Gui.Controls
 {
@@ -35,6 +37,7 @@ namespace Cecil.Decompiler.Gui.Controls
         private void RegisterServices()
         {
             ServiceProvider serviceProvider = ServiceProvider.GetInstance();
+            serviceProvider.RegisterService(typeof(IServiceProvider), serviceProvider);
             serviceProvider.RegisterService(typeof(IAssemblyManager), assemblyManager);
             serviceProvider.RegisterService(typeof(IAssemblyBrowser), assemblyBrowserControl);
             serviceProvider.RegisterService(typeof(ILanguageManager), toolbarControl.LanguageManager);
@@ -112,8 +115,14 @@ namespace Cecil.Decompiler.Gui.Controls
             }
 
             // Testing
-            TestPlugin plugin = new TestPlugin();
-            plugin.Load(ServiceProvider.GetInstance());
+            // TestPlugin plugin = new TestPlugin();
+            // plugin.Load(ServiceProvider.GetInstance());
+
+            // Testing - dll plugins
+            // Assembly reflexil = Assembly.Load("Reflexil");
+            // Type type = reflexil.GetType("Reflexil.Utils.ReflexilPackage");
+            // (Activator.CreateInstance(type) as IPlugin).Load(ServiceProvider.GetInstance());
+
         }
         #endregion
 

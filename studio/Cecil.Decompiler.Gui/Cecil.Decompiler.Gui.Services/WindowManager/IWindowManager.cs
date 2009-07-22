@@ -3,5 +3,6 @@
     public interface IWindowManager
     {
         IWindowCollection Windows { get; }
+        void ShowMessage(string message);
     }
 }

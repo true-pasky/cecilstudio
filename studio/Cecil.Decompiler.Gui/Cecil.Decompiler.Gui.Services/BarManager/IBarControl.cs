@@ -5,7 +5,9 @@ using System.Text;
 
 namespace Cecil.Decompiler.Gui.Services
 {
-    public interface IBarButton : IBarItem, IActionNameContainer, IBarControl 
+    public interface IBarControl
     {
+       event EventHandler Click;
+       void PerformClick();
     }
 }
