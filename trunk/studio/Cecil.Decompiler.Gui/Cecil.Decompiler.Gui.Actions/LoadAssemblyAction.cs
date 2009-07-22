@@ -6,9 +6,9 @@ namespace Cecil.Decompiler.Gui.Actions
     internal partial class LoadAssemblyAction : BaseAction
     {
         #region IAction
-        public override ActionNames Name
+        public override string Name
         {
-            get { return ActionNames.LoadAssembly; }
+            get { return ActionNames.LoadAssembly.ToString(); }
         }
 
         public override void Execute()

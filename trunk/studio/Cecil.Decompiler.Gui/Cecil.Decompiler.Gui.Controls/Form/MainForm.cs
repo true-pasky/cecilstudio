@@ -1,31 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using Cecil.Decompiler.Gui.Actions;
 using Cecil.Decompiler.Gui.Services;
 using Cecil.Decompiler.Gui.Tests;
 using Cecil.Decompiler.Languages;
+using Cecil.Decompiler.Gui.Collections;
 
 namespace Cecil.Decompiler.Gui.Controls
 {
-    internal partial class MainForm : Form, IActionManager 
+    internal partial class MainForm : Form, IActionManager, IBarManager 
     {
-        private readonly Dictionary<ActionNames, IAction> actions = new Dictionary<ActionNames, IAction>();
+        ActionCollection actions = new ActionCollection();
+        BarCollection bars = new BarCollection();
 
         #region Registration
         private void RegisterLanguages()
         {
             ILanguage selected;
+            ILanguageCollection languages;
 
-            toolbarControl.LanguageManager.RegisterLanguage(new CSharp());
-            toolbarControl.LanguageManager.RegisterLanguage(new CSharpV1());
-            toolbarControl.LanguageManager.RegisterLanguage(new CSharpV2());
-            toolbarControl.LanguageManager.RegisterLanguage(selected = new CSharpV3());
+            languages = toolbarControl.LanguageManager.Languages;
+            languages.Add(new CSharp());
+            languages.Add(new CSharpV1());
+            languages.Add(new CSharpV2());
+            languages.Add(selected = new CSharpV3());
 
-            toolbarControl.LanguageManager.RegisterLanguage(new VisualBasic());
-            toolbarControl.LanguageManager.RegisterLanguage(new VisualBasic7());
-            toolbarControl.LanguageManager.RegisterLanguage(new VisualBasic8());
-            toolbarControl.LanguageManager.RegisterLanguage(new VisualBasic9());
+            languages.Add(new VisualBasic());
+            languages.Add(new VisualBasic7());
+            languages.Add(new VisualBasic8());
+            languages.Add(new VisualBasic9());
 
             toolbarControl.LanguageManager.ActiveLanguage = selected;
         }
@@ -39,44 +41,48 @@ namespace Cecil.Decompiler.Gui.Controls
             serviceProvider.RegisterService(typeof(IWindowManager), windowStackerControl);
         }
 
+        private void RegisterBars()
+        {
+            toolbarControl.Name = BarNames.Toolbar.ToString();
+            bars.Add(toolbarControl);
+
+            menuControl.Name = BarNames.Menu.ToString();
+            bars.Add(menuControl);
+
+            statusbarControl.Name = BarNames.Status.ToString();
+            bars.Add(statusbarControl);
+        }
+
         private void RegisterActions()
         {
-            RegisterAction(new LoadAssemblyAction());
-            RegisterAction(new UnloadAssemblyAction());
-            RegisterAction(new DisassembleAction());
-            RegisterAction(new GoBackAction());
-            RegisterAction(new GoForwardAction());
-            RegisterAction(new AnalyzeAction());
-        }
-
-        public void RegisterAction(IAction action)
-        {
-            actions.Add(action.Name, action);
-        }
-
-        public void UnRegisterAction(IAction action)
-        {
-            actions.Remove(action.Name);
+            actions.Add(new LoadAssemblyAction());
+            actions.Add(new UnloadAssemblyAction());
+            actions.Add(new DisassembleAction());
+            actions.Add(new GoBackAction());
+            actions.Add(new GoForwardAction());
+            actions.Add(new AnalyzeAction());
+            actions.Add(new VoidAction());
         }
         #endregion
 
         #region IActionManager
-        public void ExecuteAction(ActionNames name)
+        IActionCollection IActionManager.Actions
         {
-            if (name != ActionNames.None)
+            get
             {
-                GetAction(name).Execute();
-
+                return actions;
             }
         }
 
-        public IAction GetAction(ActionNames name)
+        #endregion
+
+        #region IBarManager
+        IBarCollection IBarManager.Bars
         {
-            if (!actions.ContainsKey(name))
+            get
             {
-                throw new ArgumentException(name + " is not registered");
+                return bars;
             }
-            return actions[name];
         }
         #endregion
 
@@ -88,6 +94,7 @@ namespace Cecil.Decompiler.Gui.Controls
                 RegisterActions();
                 ServiceProvider serviceProvider = ServiceProvider.GetInstance();
                 serviceProvider.RegisterService(typeof(IActionManager), this);
+                serviceProvider.RegisterService(typeof(IBarManager), this);
             }
 
             InitializeComponent();
@@ -96,13 +103,19 @@ namespace Cecil.Decompiler.Gui.Controls
             {
                 toolbarControl.WireItems();
                 menuControl.WireItems();
-                
+
+                RegisterBars();
                 RegisterLanguages();
                 RegisterServices();
 
                 breadCrumbControl.Wire();
             }
+
+            // Testing
+            TestPlugin plugin = new TestPlugin();
+            plugin.Load(ServiceProvider.GetInstance());
         }
         #endregion
+
     }
 }

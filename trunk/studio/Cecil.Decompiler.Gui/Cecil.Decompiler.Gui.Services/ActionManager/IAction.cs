@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace Cecil.Decompiler.Gui.Actions
+namespace Cecil.Decompiler.Gui.Services
 {
     public interface IAction
     {
         event EventHandler EnabledChanged;
         bool Enabled { get; set; }
-        ActionNames Name { get; } 
+        string Name { get; } 
         void Execute();
     }
 }

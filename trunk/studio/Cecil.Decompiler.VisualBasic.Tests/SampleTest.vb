@@ -1,5 +1,5 @@
 ﻿Imports Mono.Cecil
-Imports Cecil.Decompiler.Tests.Cecil.Decompilation
+Imports Cecil.Decompiler
 Imports Cecil.Decompiler.Languages
 Imports NUnit.Core
 Imports Mono.Cecil.Cil
@@ -7,7 +7,7 @@ Imports NUnit.Framework
 
 <TestFixture()> _
 Public Class SampleTest
-	Inherits DecompilationTestFixture
+    Inherits DecompilerTestFixture
 
 	<DecompilationTest(Filename:="ReturnTest.vb", MethodName:="Test")> _
 	Public Sub TestReturn(ByVal body As MethodBody, ByVal expected As String)

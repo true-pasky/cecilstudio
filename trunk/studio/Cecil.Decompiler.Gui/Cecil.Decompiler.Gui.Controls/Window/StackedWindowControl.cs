@@ -7,7 +7,7 @@ namespace Cecil.Decompiler.Gui.Controls
 {
     internal partial class StackedWindowControl : UserControl, IWindow
     {
-        public WindowIdentifiers Identifier
+        public WindowNames Identifier
         {
             get; set;
         }

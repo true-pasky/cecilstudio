@@ -1,19 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using Cecil.Decompiler.Gui.Services;
 
 namespace Cecil.Decompiler.Gui.Actions
 {
-    internal class UnloadAssemblyAction : BaseAction
+    class VoidAction : BaseAction
     {
         #region IAction
         public override string Name
         {
-            get { return ActionNames.UnloadAssembly.ToString(); }
+            get { return ActionNames.None.ToString(); }
         }
 
         public override void Execute()
         {
-            throw new NotImplementedException();
         }
         #endregion
     }

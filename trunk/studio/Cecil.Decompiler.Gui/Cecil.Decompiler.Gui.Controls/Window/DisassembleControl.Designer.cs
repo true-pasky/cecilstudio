@@ -57,7 +57,7 @@
             // DisassembleControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.Identifier = Cecil.Decompiler.Gui.Actions.WindowIdentifiers.Disassemble;
+            this.Identifier = Cecil.Decompiler.Gui.Services.WindowNames.Disassemble;
             this.Name = "DisassembleControl";
             this.Load += new System.EventHandler(this.DisassembleControl_Load);
             this.contentPanel.ResumeLayout(false);

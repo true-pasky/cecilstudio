@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.fileMenuItem = new Cecil.Decompiler.Gui.Controls.ToolStripMenuItem();
-            this.loadMenuItem = new Cecil.Decompiler.Gui.Controls.ToolStripMenuItem();
-            this.unloadMenuItem = new Cecil.Decompiler.Gui.Controls.ToolStripMenuItem();
-            this.viewMenuItem = new Cecil.Decompiler.Gui.Controls.ToolStripMenuItem();
-            this.backMenuItem = new Cecil.Decompiler.Gui.Controls.ToolStripMenuItem();
-            this.forwardMenuItem = new Cecil.Decompiler.Gui.Controls.ToolStripMenuItem();
-            this.toolsMenuItem = new Cecil.Decompiler.Gui.Controls.ToolStripMenuItem();
-            this.analyzeMenuItem = new Cecil.Decompiler.Gui.Controls.ToolStripMenuItem();
-            this.disassembleMenuItem = new Cecil.Decompiler.Gui.Controls.ToolStripMenuItem();
+            this.fileMenuItem = new Cecil.Decompiler.Gui.Controls.BarMenu();
+            this.loadMenuItem = new Cecil.Decompiler.Gui.Controls.BarMenu();
+            this.unloadMenuItem = new Cecil.Decompiler.Gui.Controls.BarMenu();
+            this.viewMenuItem = new Cecil.Decompiler.Gui.Controls.BarMenu();
+            this.backMenuItem = new Cecil.Decompiler.Gui.Controls.BarMenu();
+            this.forwardMenuItem = new Cecil.Decompiler.Gui.Controls.BarMenu();
+            this.toolsMenuItem = new Cecil.Decompiler.Gui.Controls.BarMenu();
+            this.analyzeMenuItem = new Cecil.Decompiler.Gui.Controls.BarMenu();
+            this.disassembleMenuItem = new Cecil.Decompiler.Gui.Controls.BarMenu();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,11 +53,11 @@
             this.menuStrip.Size = new System.Drawing.Size(150, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
-            this.menuStrip.ItemAdded += new System.Windows.Forms.ToolStripItemEventHandler(this.MenuStrip_ItemAdded);
+            this.menuStrip.ItemAdded += new System.Windows.Forms.ToolStripItemEventHandler(this.ItemAdded);
             // 
             // fileMenuItem
             // 
-            this.fileMenuItem.ActionName = Cecil.Decompiler.Gui.Actions.ActionNames.None;
+            this.fileMenuItem.ActionName = Cecil.Decompiler.Gui.Services.ActionNames.None;
             this.fileMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loadMenuItem,
             this.unloadMenuItem});
@@ -67,7 +67,7 @@
             // 
             // loadMenuItem
             // 
-            this.loadMenuItem.ActionName = Cecil.Decompiler.Gui.Actions.ActionNames.LoadAssembly;
+            this.loadMenuItem.ActionName = Cecil.Decompiler.Gui.Services.ActionNames.LoadAssembly;
             this.loadMenuItem.Image = global::Cecil.Decompiler.Gui.Properties.Resources.folder;
             this.loadMenuItem.Name = "loadMenuItem";
             this.loadMenuItem.ShortcutKeyDisplayString = "Ctrl+O";
@@ -76,7 +76,7 @@
             // 
             // unloadMenuItem
             // 
-            this.unloadMenuItem.ActionName = Cecil.Decompiler.Gui.Actions.ActionNames.UnloadAssembly;
+            this.unloadMenuItem.ActionName = Cecil.Decompiler.Gui.Services.ActionNames.UnloadAssembly;
             this.unloadMenuItem.Image = global::Cecil.Decompiler.Gui.Properties.Resources.window_close;
             this.unloadMenuItem.Name = "unloadMenuItem";
             this.unloadMenuItem.Size = new System.Drawing.Size(160, 22);
@@ -84,7 +84,7 @@
             // 
             // viewMenuItem
             // 
-            this.viewMenuItem.ActionName = Cecil.Decompiler.Gui.Actions.ActionNames.None;
+            this.viewMenuItem.ActionName = Cecil.Decompiler.Gui.Services.ActionNames.None;
             this.viewMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.backMenuItem,
             this.forwardMenuItem});
@@ -94,7 +94,7 @@
             // 
             // backMenuItem
             // 
-            this.backMenuItem.ActionName = Cecil.Decompiler.Gui.Actions.ActionNames.GoBack;
+            this.backMenuItem.ActionName = Cecil.Decompiler.Gui.Services.ActionNames.GoBack;
             this.backMenuItem.Image = global::Cecil.Decompiler.Gui.Properties.Resources.go_back;
             this.backMenuItem.Name = "backMenuItem";
             this.backMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Left)));
@@ -103,7 +103,7 @@
             // 
             // forwardMenuItem
             // 
-            this.forwardMenuItem.ActionName = Cecil.Decompiler.Gui.Actions.ActionNames.GoForward;
+            this.forwardMenuItem.ActionName = Cecil.Decompiler.Gui.Services.ActionNames.GoForward;
             this.forwardMenuItem.Image = global::Cecil.Decompiler.Gui.Properties.Resources.go_forward;
             this.forwardMenuItem.Name = "forwardMenuItem";
             this.forwardMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Right)));
@@ -112,7 +112,7 @@
             // 
             // toolsMenuItem
             // 
-            this.toolsMenuItem.ActionName = Cecil.Decompiler.Gui.Actions.ActionNames.None;
+            this.toolsMenuItem.ActionName = Cecil.Decompiler.Gui.Services.ActionNames.None;
             this.toolsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.analyzeMenuItem,
             this.disassembleMenuItem});
@@ -122,7 +122,7 @@
             // 
             // analyzeMenuItem
             // 
-            this.analyzeMenuItem.ActionName = Cecil.Decompiler.Gui.Actions.ActionNames.Analyze;
+            this.analyzeMenuItem.ActionName = Cecil.Decompiler.Gui.Services.ActionNames.Analyze;
             this.analyzeMenuItem.Image = global::Cecil.Decompiler.Gui.Properties.Resources.analyze;
             this.analyzeMenuItem.Name = "analyzeMenuItem";
             this.analyzeMenuItem.ShortcutKeyDisplayString = "";
@@ -131,7 +131,7 @@
             // 
             // disassembleMenuItem
             // 
-            this.disassembleMenuItem.ActionName = Cecil.Decompiler.Gui.Actions.ActionNames.Disassemble;
+            this.disassembleMenuItem.ActionName = Cecil.Decompiler.Gui.Services.ActionNames.Disassemble;
             this.disassembleMenuItem.Image = global::Cecil.Decompiler.Gui.Properties.Resources.disassemble;
             this.disassembleMenuItem.Name = "disassembleMenuItem";
             this.disassembleMenuItem.ShortcutKeyDisplayString = "";
@@ -155,14 +155,14 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip;
-        private Cecil.Decompiler.Gui.Controls.ToolStripMenuItem fileMenuItem;
-        private Cecil.Decompiler.Gui.Controls.ToolStripMenuItem loadMenuItem;
-        private Cecil.Decompiler.Gui.Controls.ToolStripMenuItem toolsMenuItem;
-        private Cecil.Decompiler.Gui.Controls.ToolStripMenuItem disassembleMenuItem;
-        private Cecil.Decompiler.Gui.Controls.ToolStripMenuItem viewMenuItem;
-        private Cecil.Decompiler.Gui.Controls.ToolStripMenuItem backMenuItem;
-        private Cecil.Decompiler.Gui.Controls.ToolStripMenuItem forwardMenuItem;
-        private ToolStripMenuItem unloadMenuItem;
-        private ToolStripMenuItem analyzeMenuItem;
+        private Cecil.Decompiler.Gui.Controls.BarMenu fileMenuItem;
+        private Cecil.Decompiler.Gui.Controls.BarMenu loadMenuItem;
+        private Cecil.Decompiler.Gui.Controls.BarMenu toolsMenuItem;
+        private Cecil.Decompiler.Gui.Controls.BarMenu disassembleMenuItem;
+        private Cecil.Decompiler.Gui.Controls.BarMenu viewMenuItem;
+        private Cecil.Decompiler.Gui.Controls.BarMenu backMenuItem;
+        private Cecil.Decompiler.Gui.Controls.BarMenu forwardMenuItem;
+        private Cecil.Decompiler.Gui.Controls.BarMenu unloadMenuItem;
+        private Cecil.Decompiler.Gui.Controls.BarMenu analyzeMenuItem;
     }
 }

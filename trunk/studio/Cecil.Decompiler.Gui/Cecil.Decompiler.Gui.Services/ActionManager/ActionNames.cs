@@ -1,4 +1,4 @@
-﻿namespace Cecil.Decompiler.Gui.Actions
+﻿namespace Cecil.Decompiler.Gui.Services
 {
     public enum ActionNames
     {
@@ -9,6 +9,6 @@
         Disassemble,
         GoBack,
         GoForward,
-        Analyze
+        Analyze,
     }
 }

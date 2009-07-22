@@ -156,10 +156,10 @@ namespace Cecil.Decompiler.Gui.Controls
         {
             var actionManager = ServiceProvider.GetInstance().GetService<IActionManager>();
 
-            var goback = actionManager.GetAction(ActionNames.GoBack);
+            var goback = actionManager.Actions[ActionNames.GoBack];
             goback.Enabled = historyindex > 0;
 
-            var goforward = actionManager.GetAction(ActionNames.GoForward);
+            var goforward = actionManager.Actions[ActionNames.GoForward];
             goforward.Enabled = historyindex < history.Count - 1;
         }
 
