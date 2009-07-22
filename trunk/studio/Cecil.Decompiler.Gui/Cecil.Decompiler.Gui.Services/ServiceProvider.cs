@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Cecil.Decompiler.Gui.Services
 {
-    internal class ServiceProvider : IServiceProvider 
+    internal class ServiceProvider : IServiceProvider, IService  
     {
         private readonly Dictionary<Type, IService> services = new Dictionary<Type, IService>();
         private static readonly ServiceProvider instance;

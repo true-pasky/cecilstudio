@@ -35,6 +35,7 @@ namespace Cecil.Decompiler.Gui.Controls
             InitializeComponent();
 
             label.Text = caption;
+            content.Dock = DockStyle.Fill;
             contentPanel.Controls.Add(content);
         }
 
@@ -50,6 +51,18 @@ namespace Cecil.Decompiler.Gui.Controls
         private void CloseBox_Click(object sender, EventArgs e)
         {
             Visible = false;
+        }
+
+        public System.Drawing.Image Image
+        {
+            get
+            {
+                return iconBox.Image;
+            }
+            set
+            {
+                iconBox.Image = value;
+            }
         }
     }
 }

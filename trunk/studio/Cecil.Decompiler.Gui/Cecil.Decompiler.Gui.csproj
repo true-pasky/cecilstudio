@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Cecil.Decompiler.Gui.Services\ActionManager\IActionCollection.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\BarNames.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarControl.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarSeparator.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarItemCollection.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarCollection.cs" />

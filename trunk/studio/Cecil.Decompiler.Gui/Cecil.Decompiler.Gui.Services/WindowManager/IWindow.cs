@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using System.Drawing;
 
 namespace Cecil.Decompiler.Gui.Services
 {
@@ -6,6 +7,7 @@ namespace Cecil.Decompiler.Gui.Services
     {
         string Caption { get; }
         Control Content { get; }
+        Image Image { get; set; }
         bool Visible { get; set; }
     }
 }

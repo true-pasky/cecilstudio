@@ -127,5 +127,10 @@ namespace Cecil.Decompiler.Gui.Controls
         {
             get { throw new System.NotImplementedException(); }
         }
+
+        public void ShowMessage(string message)
+        {
+            MessageBox.Show(message);
+        }
     }
 }
