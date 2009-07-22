@@ -7,15 +7,20 @@ namespace Cecil.Decompiler.Gui.Actions
     internal class BaseStackedWindowControlAction<T> : BaseAction where T : StackedWindowControl, new()
     {
         private readonly T window = new T();
-        private readonly ActionNames actionName;
+        private readonly string actionName;
 
-        public BaseStackedWindowControlAction(ActionNames actionName)
+        public BaseStackedWindowControlAction(string actionName)
         {
             this.actionName = actionName;
         }
 
+        public BaseStackedWindowControlAction(ActionNames actionName)
+        {
+            this.actionName = actionName.ToString();
+        }
+
         #region IAction
-        public override ActionNames Name
+        public override string Name
         {
             get { return actionName; }
         }

@@ -42,7 +42,7 @@
             // AnalyzeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.Identifier = Cecil.Decompiler.Gui.Actions.WindowIdentifiers.Analyze;
+            this.Identifier = Cecil.Decompiler.Gui.Services.WindowNames.Analyze;
             this.Name = "AnalyzeControl";
             ((System.ComponentModel.ISupportInitialize)(this.iconBox)).EndInit();
             this.ResumeLayout(false);

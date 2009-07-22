@@ -51,11 +51,21 @@
   <ItemGroup>
     <Compile Include="Cecil.Decompiler.Gui.Actions\BaseStackedWindowControlAction.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Actions\AnalyzeAction.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Actions\VoidAction.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Collections\ActionCollection.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Collections\BarCollection.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Controls\Toolstrip\BarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cecil.Decompiler.Gui.Collections\WiredBarItemCollection.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Controls\Toolstrip\BreadCrumbControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Cecil.Decompiler.Gui.Controls\Toolstrip\BreadCrumbControl.Designer.cs">
       <DependentUpon>BreadCrumbControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cecil.Decompiler.Gui.Controls\Toolstrip\BarSeparator.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Cecil.Decompiler.Gui.Controls\Window\AnalyzeControl.cs">
       <SubType>UserControl</SubType>
@@ -79,19 +89,30 @@
     <Compile Include="Cecil.Decompiler.Gui.Actions\GoBackAction.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Actions\LoadAssemblyAction.cs">
     </Compile>
-    <Compile Include="Cecil.Decompiler.Gui.Services\WindowManager\WindowIdentifiers.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Services\ActionManager\IActionCollection.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\BarNames.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarSeparator.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarItemCollection.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarCollection.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarButton.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarItem.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarMenu.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBar.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarManager.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Services\LanguageManager\ILanguageCollection.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Services\WindowManager\WindowNames.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Services\ActionManager\IActionNameContainer.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Actions\DisassembleAction.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Services\ActionManager\IActionManager.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Services\ActionManager\IAction.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Controls\Toolstrip\ToolStripMenuItem.cs">
+    <Compile Include="Cecil.Decompiler.Gui.Controls\Toolstrip\BarMenu.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Cecil.Decompiler.Gui.Controls\Treeview\ObjectTreeNode.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Controls\Toolstrip\ToolStripButton.cs">
+    <Compile Include="Cecil.Decompiler.Gui.Controls\Toolstrip\BarButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Cecil.Decompiler.Gui.Controls\Toolstrip\ToolStripItem.cs">
+    <Compile Include="Cecil.Decompiler.Gui.Controls\Toolstrip\BarItem.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Cecil.Decompiler.Gui.Controls\Component\AssemblyManagerComponent.cs">
@@ -172,6 +193,9 @@
     </Compile>
     <Compile Include="Cecil.Decompiler.Gui.Tests\TestPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Cecil.Decompiler.Gui.Controls\Toolstrip\BarControl.resx">
+      <DependentUpon>BarControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cecil.Decompiler.Gui.Controls\Toolstrip\BreadCrumbControl.resx">
       <DependentUpon>BreadCrumbControl.cs</DependentUpon>
     </EmbeddedResource>

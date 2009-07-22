@@ -1,4 +1,4 @@
-﻿namespace Cecil.Decompiler.Gui.Actions
+﻿namespace Cecil.Decompiler.Gui.Services
 {
     public interface IActionNameContainer
     {

@@ -7,8 +7,6 @@ namespace Cecil.Decompiler.Gui.Controls
 {
     public partial class BreadCrumbControl : UserControl
     {
-        private object displayeditem = null;
-
         public BreadCrumbControl()
         {
             InitializeComponent();
@@ -54,11 +52,11 @@ namespace Cecil.Decompiler.Gui.Controls
                 ts.ImageIndex = (int)IconHelper.GetImageIndex(item);
                 ts.ToolTipText = item.GetType().Name;
                 ts.Tag = item;
-                ts.Click += new EventHandler(Click);
+                ts.Click += new EventHandler(ItemClick);
             }
         }
 
-        void Click(object sender, EventArgs e)
+        void ItemClick(object sender, EventArgs e)
         {
             var asmBrowser = ServiceProvider.GetInstance().GetService<IAssemblyBrowser>();
             asmBrowser.ActiveItem = (sender as System.Windows.Forms.ToolStripItem).Tag;

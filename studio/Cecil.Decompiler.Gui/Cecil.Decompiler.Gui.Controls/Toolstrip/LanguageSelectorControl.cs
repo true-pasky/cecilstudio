@@ -8,7 +8,7 @@ using Cecil.Decompiler.Languages;
 
 namespace Cecil.Decompiler.Gui.Controls
 {
-    internal class LanguageSelectorControl : ToolStripComboBox, ILanguageManager
+    internal class LanguageSelectorControl : ToolStripComboBox, ILanguageManager, ILanguageCollection 
     {
         private readonly Dictionary<string, ILanguage> languages = new Dictionary<string, ILanguage>();
 
@@ -26,29 +26,9 @@ namespace Cecil.Decompiler.Gui.Controls
             }
         }
 
-        public ICollection<ILanguage> Languages
-        {
-            get
-            {
-                return new ReadOnlyCollection<ILanguage>(languages.Values.ToList());
-            }
-        }
-        
         public LanguageSelectorControl()
         {
             this.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
-        public void RegisterLanguage(ILanguage language)
-        {
-            languages.Add(language.Name, language);
-            this.Items.Add(language.Name);
-        }
-
-        public void UnregisterLanguage(ILanguage language)
-        {
-            languages.Remove(language.Name);
-            this.Items.Remove(language.Name);
         }
 
         protected override void OnSelectedIndexChanged(EventArgs e)
@@ -58,6 +38,48 @@ namespace Cecil.Decompiler.Gui.Controls
             {
                 ActiveLanguageChanged(this, EventArgs.Empty);
             }
+        }
+
+        ILanguageCollection ILanguageManager.Languages
+        {
+            get { return this; }
+        }
+
+        public void Add(ILanguage language)
+        {
+            languages.Add(language.Name, language);
+            this.Items.Add(language.Name);
+        }
+
+        public void Remove(ILanguage language)
+        {
+            languages.Remove(language.Name);
+            this.Items.Remove(language.Name);
+        }
+
+        public void CopyTo(Array array, int index)
+        {
+            languages.ToArray().CopyTo(array, index);
+        }
+
+        public int Count
+        {
+            get { return languages.Count; }
+        }
+
+        public bool IsSynchronized
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public object SyncRoot
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public System.Collections.IEnumerator GetEnumerator()
+        {
+            return languages.Values.GetEnumerator();
         }
     }
 }

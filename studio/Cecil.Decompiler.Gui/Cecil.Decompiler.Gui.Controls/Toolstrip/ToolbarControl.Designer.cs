@@ -30,9 +30,9 @@
         {
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.backButton = new Cecil.Decompiler.Gui.Controls.ToolStripButton();
-            this.forwardButton = new Cecil.Decompiler.Gui.Controls.ToolStripButton();
-            this.loadButton = new Cecil.Decompiler.Gui.Controls.ToolStripButton();
+            this.backButton = new Cecil.Decompiler.Gui.Controls.BarButton();
+            this.forwardButton = new Cecil.Decompiler.Gui.Controls.BarButton();
+            this.loadButton = new Cecil.Decompiler.Gui.Controls.BarButton();
             this.languageSelector = new Cecil.Decompiler.Gui.Controls.LanguageSelectorControl();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -51,8 +51,8 @@
             this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip.Size = new System.Drawing.Size(150, 25);
             this.toolStrip.TabIndex = 0;
-            this.toolStrip.ItemAdded += new System.Windows.Forms.ToolStripItemEventHandler(this.ToolStrip_ItemAdded);
-            this.toolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ToolStrip_ItemClicked);
+            this.toolStrip.ItemAdded += new System.Windows.Forms.ToolStripItemEventHandler(this.ItemAdded);
+            this.toolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ItemClick);
             // 
             // toolStripSeparator
             // 
@@ -61,7 +61,7 @@
             // 
             // backButton
             // 
-            this.backButton.ActionName = Cecil.Decompiler.Gui.Actions.ActionNames.GoBack;
+            this.backButton.ActionName = Cecil.Decompiler.Gui.Services.ActionNames.GoBack;
             this.backButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.backButton.Image = global::Cecil.Decompiler.Gui.Properties.Resources.go_back;
             this.backButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -71,7 +71,7 @@
             // 
             // forwardButton
             // 
-            this.forwardButton.ActionName = Cecil.Decompiler.Gui.Actions.ActionNames.GoForward;
+            this.forwardButton.ActionName = Cecil.Decompiler.Gui.Services.ActionNames.GoForward;
             this.forwardButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.forwardButton.Image = global::Cecil.Decompiler.Gui.Properties.Resources.go_forward;
             this.forwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -81,7 +81,7 @@
             // 
             // loadButton
             // 
-            this.loadButton.ActionName = Cecil.Decompiler.Gui.Actions.ActionNames.LoadAssembly;
+            this.loadButton.ActionName = Cecil.Decompiler.Gui.Services.ActionNames.LoadAssembly;
             this.loadButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.loadButton.Image = global::Cecil.Decompiler.Gui.Properties.Resources.folder;
             this.loadButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -114,9 +114,9 @@
 
         private System.Windows.Forms.ToolStrip toolStrip;
         private Cecil.Decompiler.Gui.Controls.LanguageSelectorControl languageSelector;
-        private Cecil.Decompiler.Gui.Controls.ToolStripButton loadButton;
-        private Cecil.Decompiler.Gui.Controls.ToolStripButton backButton;
-        private Cecil.Decompiler.Gui.Controls.ToolStripButton forwardButton;
+        private Cecil.Decompiler.Gui.Controls.BarButton loadButton;
+        private Cecil.Decompiler.Gui.Controls.BarButton backButton;
+        private Cecil.Decompiler.Gui.Controls.BarButton forwardButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
     }
 }

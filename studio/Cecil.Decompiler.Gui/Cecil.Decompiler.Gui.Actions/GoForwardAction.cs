@@ -5,9 +5,9 @@ namespace Cecil.Decompiler.Gui.Actions
     internal class GoForwardAction : BaseAction
     {
         #region IAction
-        public override ActionNames Name
+        public override string Name
         {
-            get { return ActionNames.GoForward; }
+            get { return ActionNames.GoForward.ToString(); }
         }
 
         public override void Execute()

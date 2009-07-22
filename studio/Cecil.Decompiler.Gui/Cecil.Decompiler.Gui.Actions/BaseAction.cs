@@ -1,4 +1,5 @@
 ﻿using System;
+using Cecil.Decompiler.Gui.Services;
 
 namespace Cecil.Decompiler.Gui.Actions
 {
@@ -21,7 +22,7 @@ namespace Cecil.Decompiler.Gui.Actions
                     EnabledChanged(this, EventArgs.Empty);
             }
         }
-        public abstract ActionNames Name { get; }
+        public abstract string Name { get; }
         public abstract void Execute();
         #endregion
     }

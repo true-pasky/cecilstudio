@@ -5,9 +5,9 @@ namespace Cecil.Decompiler.Gui.Actions
     internal class GoBackAction : BaseAction
     {
         #region IAction
-        public override ActionNames Name
+        public override string Name
         {
-            get { return ActionNames.GoBack; }
+            get { return ActionNames.GoBack.ToString(); }
         }
 
         public override void Execute()

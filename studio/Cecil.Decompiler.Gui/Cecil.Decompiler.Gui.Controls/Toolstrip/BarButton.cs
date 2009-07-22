@@ -1,8 +1,10 @@
 ﻿using Cecil.Decompiler.Gui.Actions;
+using Cecil.Decompiler.Gui.Services;
+using System.Windows.Forms;
 
 namespace Cecil.Decompiler.Gui.Controls
 {
-    internal class ToolStripButton : System.Windows.Forms.ToolStripButton, IActionNameContainer 
+    internal class BarButton : ToolStripButton, IBarButton  
     {
         public ActionNames ActionName
         {

@@ -8,10 +8,7 @@ namespace Cecil.Decompiler.Gui.Services
     {
         event EventHandler ActiveLanguageChanged;
 
-        void RegisterLanguage(ILanguage language);
-        void UnregisterLanguage(ILanguage language);
-
         ILanguage ActiveLanguage { get; set; }
-        ICollection<ILanguage> Languages { get; }
+        ILanguageCollection Languages { get; }
     }
 }
