@@ -1,11 +1,10 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.IO;
+using System.Windows.Forms;
 using Cecil.Decompiler.Gui.Actions;
-using Cecil.Decompiler.Gui.Services;
-using Cecil.Decompiler.Gui.Tests;
-using Cecil.Decompiler.Languages;
 using Cecil.Decompiler.Gui.Collections;
-using System.Reflection;
-using System;
+using Cecil.Decompiler.Gui.Services;
+using Cecil.Decompiler.Languages;
 
 namespace Cecil.Decompiler.Gui.Controls
 {
@@ -114,15 +113,8 @@ namespace Cecil.Decompiler.Gui.Controls
                 breadCrumbControl.Wire();
             }
 
-            // Testing
-            // TestPlugin plugin = new TestPlugin();
-            // plugin.Load(ServiceProvider.GetInstance());
-
-            // Testing - dll plugins
-            // Assembly reflexil = Assembly.Load("Reflexil");
-            // Type type = reflexil.GetType("Reflexil.Utils.ReflexilPackage");
-            // (Activator.CreateInstance(type) as IPlugin).Load(ServiceProvider.GetInstance());
-
+            string path = Path.GetDirectoryName(Application.ExecutablePath);
+            ServiceProvider.GetInstance().LoadPlugins(path);
         }
         #endregion
 

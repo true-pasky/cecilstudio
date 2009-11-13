@@ -82,30 +82,13 @@
     <Compile Include="Cecil.Decompiler.Gui.Controls\Window\TableLayoutSplitter.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Cecil.Decompiler.Gui.Services\ActionManager\ActionNames.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Actions\BaseAction.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Actions\UnloadAssemblyAction.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Actions\GoForwardAction.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Actions\GoBackAction.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Actions\LoadAssemblyAction.cs">
     </Compile>
-    <Compile Include="Cecil.Decompiler.Gui.Services\ActionManager\IActionCollection.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\BarNames.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarControl.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarSeparator.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarItemCollection.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarCollection.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarButton.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarItem.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarMenu.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBar.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\BarManager\IBarManager.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\LanguageManager\ILanguageCollection.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\WindowManager\WindowNames.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\ActionManager\IActionNameContainer.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Actions\DisassembleAction.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\ActionManager\IActionManager.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\ActionManager\IAction.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Controls\Toolstrip\BarMenu.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -118,9 +101,6 @@
     </Compile>
     <Compile Include="Cecil.Decompiler.Gui.Controls\Component\AssemblyManagerComponent.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Cecil.Decompiler.Gui.Services\AssemblyManager\AssemblyUnloadedEventArgs.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\ServiceProvider.cs">
     </Compile>
     <Compile Include="Cecil.Decompiler.Gui.Controls\Treeview\AssemblyBrowserControl.cs">
       <SubType>UserControl</SubType>
@@ -176,16 +156,8 @@
     <Compile Include="Cecil.Decompiler.Gui.Controls\Form\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cecil.Decompiler.Gui.Services\AssemblyManager\AssemblyLoadedEventArgs.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\WindowManager\IWindowManager.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\WindowManager\IWindowCollection.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\WindowManager\IWindow.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\IPlugin.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Runtime\Program.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\IService.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\AssemblyBrowser\IAssemblyBrowser.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\AssemblyManager\IAssemblyManager.cs" />
-    <Compile Include="Cecil.Decompiler.Gui.Services\LanguageManager\ILanguageManager.cs" />
+    <Compile Include="Cecil.Decompiler.Gui.Services\ServiceProvider.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Tests\PluginControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -278,6 +250,10 @@
     <ProjectReference Include="..\..\decompiler\Cecil.Decompiler\Cecil.Decompiler.csproj">
       <Project>{ED1BE103-1699-4116-A732-616BEB142EB2}</Project>
       <Name>Cecil.Decompiler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cecil.Decompiler.Gui.Services\Cecil.Decompiler.Gui.Services.csproj">
+      <Project>{F5696B61-06F6-4A44-9093-EEAED539C328}</Project>
+      <Name>Cecil.Decompiler.Gui.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cecil.Decompiler.VisualBasic\Cecil.Decompiler.VisualBasic.vbproj">
       <Project>{F1107C46-15C9-4D1C-AE82-4A1A02503066}</Project>

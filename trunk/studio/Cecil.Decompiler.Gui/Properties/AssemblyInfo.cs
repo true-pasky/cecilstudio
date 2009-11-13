@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Cecil.Decompiler.Gui")]
-[assembly: AssemblyCopyright("Copyright ©  2008")]
+[assembly: AssemblyCopyright("Copyright © 2008-2009 Sebastien LEBRETON")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
