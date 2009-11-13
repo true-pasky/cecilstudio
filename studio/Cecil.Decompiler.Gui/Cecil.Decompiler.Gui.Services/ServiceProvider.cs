@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 
 namespace Cecil.Decompiler.Gui.Services
 {
@@ -44,6 +46,28 @@ namespace Cecil.Decompiler.Gui.Services
         public void UnRegisterService(Type serviceType)
         {
             services.Remove(serviceType);
+        }
+
+        public void LoadPlugins(string path)
+        {
+            string[] files = Directory.GetFiles(path, "*.dll");
+
+            foreach (string file in files)
+            {
+                try
+                {
+                    // Testing purpose only!
+                    Assembly assembly = Assembly.LoadFrom(file);
+                    foreach (Type type in assembly.GetTypes())
+                    {
+                        if (typeof(IPlugin).IsAssignableFrom(type))
+                        {
+                            (Activator.CreateInstance(type) as IPlugin).Load(this);
+                        }
+                    }
+                }
+                catch (Exception) { };
+            }
         }
 
     }

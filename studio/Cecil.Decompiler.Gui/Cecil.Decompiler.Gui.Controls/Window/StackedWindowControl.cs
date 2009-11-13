@@ -34,6 +34,7 @@ namespace Cecil.Decompiler.Gui.Controls
         {
             InitializeComponent();
 
+            Visible = false;
             label.Text = caption;
             content.Dock = DockStyle.Fill;
             contentPanel.Controls.Add(content);
