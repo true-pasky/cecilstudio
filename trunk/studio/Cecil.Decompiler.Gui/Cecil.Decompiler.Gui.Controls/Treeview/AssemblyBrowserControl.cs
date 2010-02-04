@@ -121,6 +121,47 @@ namespace Cecil.Decompiler.Gui.Controls
                     history.Add(e.Node);
                     historyindex = history.Count - 1;
                 }
+
+                if (e.Node.Tag is AssemblyDefinition)
+                {
+                    treeView.ContextMenuStrip = assemblyDefinitionBrowserMenu;
+                }
+                else if (e.Node.Tag is ModuleDefinition)
+                {
+                    treeView.ContextMenuStrip = moduleDefinitionBrowserMenu;
+                }
+                else if (e.Node.Tag is AssemblyNameReference)
+                {
+                    treeView.ContextMenuStrip = assemblyNameReferenceBrowserMenu;
+                }
+                else if (e.Node.Tag is TypeDefinition)
+                {
+                    treeView.ContextMenuStrip = typeDefinitionBrowserMenu;
+                }
+                else if (e.Node.Tag is MethodDefinition)
+                {
+                    treeView.ContextMenuStrip = methodDefinitionBrowserMenu;
+                }
+                else if (e.Node.Tag is PropertyDefinition)
+                {
+                    treeView.ContextMenuStrip = propertyDefinitionBrowserMenu;
+                }
+                else if (e.Node.Tag is EventDefinition)
+                {
+                    treeView.ContextMenuStrip = eventDefinitionBrowserMenu;
+                }
+                else if (e.Node.Tag is FieldDefinition)
+                {
+                    treeView.ContextMenuStrip = fieldDefinitionBrowserMenu;
+                }
+                else
+                {
+                    treeView.ContextMenuStrip = null;
+                }
+            }
+            else
+            {
+                treeView.ContextMenuStrip = null;
             }
 
             RefreshActions();
@@ -142,12 +183,17 @@ namespace Cecil.Decompiler.Gui.Controls
 
             iconsImageList.Images.AddStrip(IconHelper.GetImageStrip());
 
-            orders.Add(typeof(AssemblyDefinition), 0);
-            orders.Add(typeof(TypeDefinition), 1);
-            orders.Add(typeof(MethodDefinition), 2);
-            orders.Add(typeof(PropertyDefinition), 3);
-            orders.Add(typeof(EventDefinition), 4);
-            orders.Add(typeof(FieldDefinition), 5);
+            int order = 0;
+            orders.Add(typeof(AssemblyDefinition), order++);
+            orders.Add(typeof(ModuleDefinition), order++);
+            orders.Add(typeof(AssemblyReferencesWrapper), order++);
+            orders.Add(typeof(AssemblyNameReference), order++);
+            orders.Add(typeof(NamespaceWrapper), order++);
+            orders.Add(typeof(TypeDefinition), order++);
+            orders.Add(typeof(MethodDefinition), order++);
+            orders.Add(typeof(PropertyDefinition), order++);
+            orders.Add(typeof(EventDefinition), order++);
+            orders.Add(typeof(FieldDefinition), order++);
 
             treeView.TreeViewNodeSorter = this;
         }
@@ -319,12 +365,23 @@ namespace Cecil.Decompiler.Gui.Controls
                 }
             }
         }
+
+        public void VisitModuleDefinition(ModuleDefinition @module) {
+            if (@module.AssemblyReferences.Count > 0)
+            {
+                AssemblyReferencesWrapper wrapper = new AssemblyReferencesWrapper(@module);
+                AppendNode(@module, wrapper, false);
+                foreach (AssemblyNameReference anref in @module.AssemblyReferences)
+                {
+                    AppendNode(wrapper, anref, false);
+                }
+            }
+        }
         #endregion
 
         #region Unimplemented vistor
         public void VisitEventDefinition(EventDefinition evt) { }
         public void VisitFieldDefinition(FieldDefinition field) { }
-        public void VisitModuleDefinition(ModuleDefinition @module) { }
         public void VisitNestedType(TypeDefinition nestedType) { }
         public void VisitPropertyDefinition(PropertyDefinition @property) { }
         public void VisitTypeDefinition(TypeDefinition type) { }

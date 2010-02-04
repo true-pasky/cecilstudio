@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.bottomPanel = new System.Windows.Forms.Panel();
-            this.statusbarControl = new Cecil.Decompiler.Gui.Controls.StatusbarControl();
             this.fillPanel = new System.Windows.Forms.Panel();
             this.mainSplitContainer = new System.Windows.Forms.SplitContainer();
             this.leftSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.topPanel = new System.Windows.Forms.Panel();
             this.assemblyBrowserControl = new Cecil.Decompiler.Gui.Controls.AssemblyBrowserControl();
             this.previewControl = new Cecil.Decompiler.Gui.Controls.PreviewControl();
             this.windowStackerControl = new Cecil.Decompiler.Gui.Controls.WindowStackerControl();
-            this.topPanel = new System.Windows.Forms.Panel();
-            this.breadCrumbControl = new Cecil.Decompiler.Gui.Controls.BreadCrumbControl();
             this.toolbarControl = new Cecil.Decompiler.Gui.Controls.ToolbarControl();
+            this.breadCrumbControl = new Cecil.Decompiler.Gui.Controls.BreadCrumbControl();
             this.menuControl = new Cecil.Decompiler.Gui.Controls.MenuControl();
+            this.statusbarControl = new Cecil.Decompiler.Gui.Controls.StatusbarControl();
             this.assemblyManager = new Cecil.Decompiler.Gui.Controls.AssemblyManagerComponent();
             this.bottomPanel.SuspendLayout();
             this.fillPanel.SuspendLayout();
@@ -60,14 +60,6 @@
             this.bottomPanel.Name = "bottomPanel";
             this.bottomPanel.Size = new System.Drawing.Size(792, 27);
             this.bottomPanel.TabIndex = 0;
-            // 
-            // statusbarControl
-            // 
-            this.statusbarControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.statusbarControl.Location = new System.Drawing.Point(0, 0);
-            this.statusbarControl.Name = "statusbarControl";
-            this.statusbarControl.Size = new System.Drawing.Size(792, 27);
-            this.statusbarControl.TabIndex = 0;
             // 
             // fillPanel
             // 
@@ -116,6 +108,17 @@
             this.leftSplitContainer.SplitterDistance = 304;
             this.leftSplitContainer.TabIndex = 0;
             // 
+            // topPanel
+            // 
+            this.topPanel.Controls.Add(this.toolbarControl);
+            this.topPanel.Controls.Add(this.breadCrumbControl);
+            this.topPanel.Controls.Add(this.menuControl);
+            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topPanel.Location = new System.Drawing.Point(0, 0);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(792, 74);
+            this.topPanel.TabIndex = 0;
+            // 
             // assemblyBrowserControl
             // 
             this.assemblyBrowserControl.ActiveItem = null;
@@ -141,32 +144,21 @@
             this.windowStackerControl.Size = new System.Drawing.Size(523, 463);
             this.windowStackerControl.TabIndex = 0;
             // 
-            // topPanel
+            // toolbarControl
             // 
-            this.topPanel.Controls.Add(this.toolbarControl);
-            this.topPanel.Controls.Add(this.breadCrumbControl);
-            this.topPanel.Controls.Add(this.menuControl);
-            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topPanel.Location = new System.Drawing.Point(0, 0);
-            this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(792, 74);
-            this.topPanel.TabIndex = 0;
+            this.toolbarControl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolbarControl.Location = new System.Drawing.Point(0, 24);
+            this.toolbarControl.Name = "toolbarControl";
+            this.toolbarControl.Size = new System.Drawing.Size(792, 25);
+            this.toolbarControl.TabIndex = 1;
             // 
             // breadCrumbControl
             // 
             this.breadCrumbControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.breadCrumbControl.Location = new System.Drawing.Point(0, 24);
+            this.breadCrumbControl.Location = new System.Drawing.Point(0, 49);
             this.breadCrumbControl.Name = "breadCrumbControl";
             this.breadCrumbControl.Size = new System.Drawing.Size(792, 25);
             this.breadCrumbControl.TabIndex = 1;
-            // 
-            // toolbarControl
-            // 
-            this.toolbarControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolbarControl.Location = new System.Drawing.Point(0, 49);
-            this.toolbarControl.Name = "toolbarControl";
-            this.toolbarControl.Size = new System.Drawing.Size(792, 25);
-            this.toolbarControl.TabIndex = 1;
             // 
             // menuControl
             // 
@@ -175,6 +167,14 @@
             this.menuControl.Name = "menuControl";
             this.menuControl.Size = new System.Drawing.Size(792, 24);
             this.menuControl.TabIndex = 0;
+            // 
+            // statusbarControl
+            // 
+            this.statusbarControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statusbarControl.Location = new System.Drawing.Point(0, 0);
+            this.statusbarControl.Name = "statusbarControl";
+            this.statusbarControl.Size = new System.Drawing.Size(792, 27);
+            this.statusbarControl.TabIndex = 0;
             // 
             // MainForm
             // 
