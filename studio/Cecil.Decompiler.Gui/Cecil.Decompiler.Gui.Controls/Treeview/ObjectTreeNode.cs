@@ -63,6 +63,11 @@ namespace Cecil.Decompiler.Gui.Controls
                 var evtdef = (EventDefinition)obj;
                 return evtdef.Name;
             }
+            else if (obj is AssemblyNameReference)
+            {
+                var anref = (AssemblyNameReference)obj;
+                return anref.Name;
+            }
             else
             {
                 return obj.ToString();
