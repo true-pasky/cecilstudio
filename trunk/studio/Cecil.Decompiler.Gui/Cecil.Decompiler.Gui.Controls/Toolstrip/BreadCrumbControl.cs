@@ -19,28 +19,9 @@ namespace Cecil.Decompiler.Gui.Controls
             asmBrowser.ActiveItemChanged += new EventHandler(ActiveItemChanged);
         }
 
-        string GetName(object item)
+        string GetDescription(object item)
         {
-            if (item is AssemblyDefinition)
-            {
-                return (item as AssemblyDefinition).Name.Name; 
-            }
-            else if (item is ModuleDefinition)
-            {
-                return (item as ModuleDefinition).Name;
-            }
-            else if (item is TypeDefinition)
-            {
-                return (item as TypeDefinition).Name;
-            }
-            else if (item is IMemberDefinition)
-            {
-                return (item as IMemberDefinition).Name;
-            }
-            else
-            {
-                return item == null ? string.Empty : item.ToString();
-            }
+            return ObjectTreeNode.GetDescription(item);
         }
 
         void RefreshPath(object[] items)
@@ -48,7 +29,7 @@ namespace Cecil.Decompiler.Gui.Controls
             toolStrip.Items.Clear();
             foreach (object item in items)
             {
-                var ts = toolStrip.Items.Add(GetName(item));
+                var ts = toolStrip.Items.Add(GetDescription(item));
                 ts.ImageIndex = (int)IconHelper.GetImageIndex(item);
                 ts.ToolTipText = item.GetType().Name;
                 ts.Tag = item;
