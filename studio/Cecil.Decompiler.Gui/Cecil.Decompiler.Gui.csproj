@@ -67,6 +67,10 @@
     <Compile Include="Cecil.Decompiler.Gui.Controls\Toolstrip\BarSeparator.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Cecil.Decompiler.Gui.Controls\Toolstrip\ContentMenuComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cecil.Decompiler.Gui.Controls\Treeview\AssemblyReferencesWrapper.cs" />
     <Compile Include="Cecil.Decompiler.Gui.Controls\Window\AnalyzeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,8 +173,14 @@
     <EmbeddedResource Include="Cecil.Decompiler.Gui.Controls\Toolstrip\BarControl.resx">
       <DependentUpon>BarControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cecil.Decompiler.Gui.Controls\Toolstrip\BarMenu.resx">
+      <DependentUpon>BarMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cecil.Decompiler.Gui.Controls\Toolstrip\BreadCrumbControl.resx">
       <DependentUpon>BreadCrumbControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cecil.Decompiler.Gui.Controls\Toolstrip\ContentMenuComponent.resx">
+      <DependentUpon>ContentMenuComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cecil.Decompiler.Gui.Controls\Window\AnalyzeControl.resx">
       <DependentUpon>AnalyzeControl.cs</DependentUpon>

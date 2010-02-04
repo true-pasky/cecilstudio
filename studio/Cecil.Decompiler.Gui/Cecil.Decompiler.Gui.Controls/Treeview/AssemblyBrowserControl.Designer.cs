@@ -30,7 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.treeView = new System.Windows.Forms.TreeView();
+            this.assemblyDefinitionBrowserMenu = new Cecil.Decompiler.Gui.Controls.ContentMenuComponent();
             this.iconsImageList = new System.Windows.Forms.ImageList(this.components);
+            this.moduleDefinitionBrowserMenu = new Cecil.Decompiler.Gui.Controls.ContentMenuComponent();
+            this.assemblyNameReferenceBrowserMenu = new Cecil.Decompiler.Gui.Controls.ContentMenuComponent();
+            this.typeDefinitionBrowserMenu = new Cecil.Decompiler.Gui.Controls.ContentMenuComponent();
+            this.methodDefinitionBrowserMenu = new Cecil.Decompiler.Gui.Controls.ContentMenuComponent();
+            this.eventDefinitionBrowserMenu = new Cecil.Decompiler.Gui.Controls.ContentMenuComponent();
+            this.propertyDefinitionBrowserMenu = new Cecil.Decompiler.Gui.Controls.ContentMenuComponent();
+            this.fieldDefinitionBrowserMenu = new Cecil.Decompiler.Gui.Controls.ContentMenuComponent();
             this.SuspendLayout();
             // 
             // treeView
@@ -47,11 +55,51 @@
             this.treeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.TreeView_BeforeExpand);
             this.treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeView_AfterSelect);
             // 
+            // assemblyDefinitionBrowserMenu
+            // 
+            this.assemblyDefinitionBrowserMenu.Name = "assemblyBrowserMenu";
+            this.assemblyDefinitionBrowserMenu.Size = new System.Drawing.Size(61, 4);
+            // 
             // iconsImageList
             // 
             this.iconsImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.iconsImageList.ImageSize = new System.Drawing.Size(16, 16);
             this.iconsImageList.TransparentColor = System.Drawing.Color.Green;
+            // 
+            // moduleDefinitionBrowserMenu
+            // 
+            this.moduleDefinitionBrowserMenu.Name = "assemblyBrowserMenu";
+            this.moduleDefinitionBrowserMenu.Size = new System.Drawing.Size(61, 4);
+            // 
+            // assemblyNameReferenceBrowserMenu
+            // 
+            this.assemblyNameReferenceBrowserMenu.Name = "assemblyNameReferenceBrowserMenu";
+            this.assemblyNameReferenceBrowserMenu.Size = new System.Drawing.Size(61, 4);
+            // 
+            // typeDefinitionBrowserMenu
+            // 
+            this.typeDefinitionBrowserMenu.Name = "typeDefinitionBrowserMenu";
+            this.typeDefinitionBrowserMenu.Size = new System.Drawing.Size(61, 4);
+            // 
+            // methodDefinitionBrowserMenu
+            // 
+            this.methodDefinitionBrowserMenu.Name = "methodDefinitionBrowserMenu";
+            this.methodDefinitionBrowserMenu.Size = new System.Drawing.Size(61, 4);
+            // 
+            // eventDefinitionBrowserMenu
+            // 
+            this.eventDefinitionBrowserMenu.Name = "eventDefinitionBrowserMenu";
+            this.eventDefinitionBrowserMenu.Size = new System.Drawing.Size(61, 4);
+            // 
+            // propertyDefinitionBrowserMenu
+            // 
+            this.propertyDefinitionBrowserMenu.Name = "propertyDefinitionBrowserMenu";
+            this.propertyDefinitionBrowserMenu.Size = new System.Drawing.Size(61, 4);
+            // 
+            // fieldDefinitionBrowserMenu
+            // 
+            this.fieldDefinitionBrowserMenu.Name = "fieldDefinitionBrowserMenu";
+            this.fieldDefinitionBrowserMenu.Size = new System.Drawing.Size(61, 4);
             // 
             // AssemblyBrowserControl
             // 
@@ -70,5 +118,13 @@
 
         private System.Windows.Forms.TreeView treeView;
         private System.Windows.Forms.ImageList iconsImageList;
+        internal ContentMenuComponent assemblyDefinitionBrowserMenu;
+        internal ContentMenuComponent moduleDefinitionBrowserMenu;
+        internal ContentMenuComponent assemblyNameReferenceBrowserMenu;
+        internal ContentMenuComponent typeDefinitionBrowserMenu;
+        internal ContentMenuComponent methodDefinitionBrowserMenu;
+        internal ContentMenuComponent eventDefinitionBrowserMenu;
+        internal ContentMenuComponent propertyDefinitionBrowserMenu;
+        internal ContentMenuComponent fieldDefinitionBrowserMenu;
     }
 }

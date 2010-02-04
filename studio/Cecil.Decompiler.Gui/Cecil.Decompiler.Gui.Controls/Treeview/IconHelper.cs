@@ -21,6 +21,8 @@ namespace Cecil.Decompiler.Gui.Controls
             handlers = new Dictionary<Type, System.Delegate>();
             handlers.Add(typeof(AssemblyDefinition), new GetImageIndexHandler<AssemblyDefinition>(GetAssemblyImageIndex));
             handlers.Add(typeof(ModuleDefinition), new GetImageIndexHandler<ModuleDefinition>(GetModuleImageIndex));
+            handlers.Add(typeof(AssemblyReferencesWrapper), new GetImageIndexHandler<AssemblyReferencesWrapper>(GetAssemblyReferencesImageIndex));
+            handlers.Add(typeof(AssemblyNameReference), new GetImageIndexHandler<AssemblyNameReference>(GetAssemblyNameReferenceImageIndex));
             handlers.Add(typeof(NamespaceWrapper), new GetImageIndexHandler<NamespaceWrapper>(GetNamespaceImageIndex));
             handlers.Add(typeof(TypeDefinition), new GetImageIndexHandler<TypeDefinition>(GetTypeImageIndex));
             handlers.Add(typeof(MethodDefinition), new GetImageIndexHandler<MethodDefinition>(GetMethodImageIndex));
@@ -145,6 +147,16 @@ namespace Cecil.Decompiler.Gui.Controls
         public static Icons GetAssemblyImageIndex(AssemblyDefinition assembly)
         {
             return Icons.Assembly;
+        }
+
+        public static Icons GetAssemblyReferencesImageIndex(AssemblyReferencesWrapper wrapper)
+        {
+            return Icons.References;
+        }
+
+        public static Icons GetAssemblyNameReferenceImageIndex(AssemblyNameReference anref)
+        {
+            return Icons.LinkedAssembly;
         }
 
         public static Icons GetNamespaceImageIndex(NamespaceWrapper @namespace)

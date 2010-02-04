@@ -10,9 +10,14 @@ namespace Cecil.Decompiler.Gui.Services
         Menu,
         Toolbar,
         Status,
-        AssemblyBrowser,
+        AssemblyDefinitionBrowser,
         NamespaceBrowser,
         TypeDefinitionBrowser,
         MethodDefinitionBrowser,
+        AssemblyNameReferenceBrowser,
+        ModuleDefinitionBrowser,
+        FieldDefinitionBrowser,
+        PropertyDefinitionBrowser,
+        EventDefinitionBrowser,
     }
 }

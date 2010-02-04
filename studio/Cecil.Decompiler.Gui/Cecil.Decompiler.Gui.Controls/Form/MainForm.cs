@@ -53,6 +53,30 @@ namespace Cecil.Decompiler.Gui.Controls
 
             statusbarControl.Name = BarNames.Status.ToString();
             bars.Add(statusbarControl);
+
+            assemblyBrowserControl.assemblyDefinitionBrowserMenu.Name = BarNames.AssemblyDefinitionBrowser.ToString();
+            bars.Add(assemblyBrowserControl.assemblyDefinitionBrowserMenu);
+
+            assemblyBrowserControl.moduleDefinitionBrowserMenu.Name = BarNames.ModuleDefinitionBrowser.ToString();
+            bars.Add(assemblyBrowserControl.moduleDefinitionBrowserMenu);
+
+            assemblyBrowserControl.assemblyNameReferenceBrowserMenu.Name = BarNames.AssemblyNameReferenceBrowser.ToString();
+            bars.Add(assemblyBrowserControl.assemblyNameReferenceBrowserMenu);
+
+            assemblyBrowserControl.typeDefinitionBrowserMenu.Name = BarNames.TypeDefinitionBrowser.ToString();
+            bars.Add(assemblyBrowserControl.typeDefinitionBrowserMenu);
+
+            assemblyBrowserControl.methodDefinitionBrowserMenu.Name = BarNames.MethodDefinitionBrowser.ToString();
+            bars.Add(assemblyBrowserControl.methodDefinitionBrowserMenu);
+
+            assemblyBrowserControl.propertyDefinitionBrowserMenu.Name = BarNames.PropertyDefinitionBrowser.ToString();
+            bars.Add(assemblyBrowserControl.propertyDefinitionBrowserMenu);
+
+            assemblyBrowserControl.eventDefinitionBrowserMenu.Name = BarNames.EventDefinitionBrowser.ToString();
+            bars.Add(assemblyBrowserControl.eventDefinitionBrowserMenu);
+
+            assemblyBrowserControl.fieldDefinitionBrowserMenu.Name = BarNames.FieldDefinitionBrowser.ToString();
+            bars.Add(assemblyBrowserControl.fieldDefinitionBrowserMenu);
         }
 
         private void RegisterActions()
